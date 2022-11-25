@@ -25,8 +25,11 @@ def run():
 
     for i, port in enumerate(workes_ports):
         with(grpc.insecure_channel(f"localhost:{port}")) as channel:
-            init_pos = int((words_size / workes_qtt ) * i)
-            final_pos = init_pos + int(words_size / workes_qtt)
+            sended_words_qtt = int(words_size / workes_qtt)
+            init_pos = sended_words_qtt * i
+            final_pos = init_pos + sended_words_qtt
+            if len(workes_ports) -1 == i and words_size % workes_qtt != 0:
+                final_pos+=1
             stub = word_count_pb2_grpc.WordCountStub(channel)
             worker_request = word_count_pb2.WordsRequest(words=' '.join(words[init_pos:final_pos]), searched_word=searched_word)
             worker_reply = stub.CountWords(worker_request)

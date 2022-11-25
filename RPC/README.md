@@ -14,4 +14,13 @@ Para o RPC foram utilizadas as seguintes tecnologias:
 3. Rodar o arquivo do servidor:
 `./word_counter_server`
 4. Rodar o arquivo do client:
-`./word_counter_client {palavra_buscada} {arquivo_txt} {endereco_do_server_1} {endereco_do_server_2}`
+`./word_counter_client`
+
+Após iniciado o servidor, as seguintes perguntas irão aparecer no terminal: 
+
+ - Digite o nome do arquivo que deseja utilizar
+ - Digite o nome da palavra que seja saber a ocorrencia
+ - Quantidade de workers (1 ou 2)
+ - Nome do host numero
+
+ Para fins de teste, o arquivo file.txt está disponível para uso. Porém, caso desejar, pode-se adicionar um novo arquivo .txt na pasta do projeto e informar seu uso na primeira pergunta. 

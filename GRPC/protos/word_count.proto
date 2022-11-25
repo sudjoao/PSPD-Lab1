@@ -1,0 +1,19 @@
+syntax = "proto3";
+
+package word_count;
+
+service WordCount {
+	// Unary
+	rpc CountWords (WordsRequest) returns (WordsResponse);
+
+}
+
+message WordsRequest {
+  string words = 1;
+  string searched_word = 2;
+}
+
+message WordsResponse {
+  int32 count = 1;
+  int32 ocurrency = 2;
+}

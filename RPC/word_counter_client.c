@@ -67,7 +67,7 @@ void get_user_input(Inputs* inputs){
 
 	for(int i = 0; i < inputs->nWorkers; i++){
 		char temp[256]; 
-		printf("Nome do host numero %d\n", i); 
+		printf("Nome do host numero %d\n", i + 1); 
 		scanf("%s" , temp);
 		strcpy(inputs->hosts[i], temp); 
 	}

@@ -63,6 +63,7 @@ void get_user_input(Inputs* inputs){
 
 	if(inputs->nWorkers > 2 || inputs->nWorkers < 1){
 		printf("Quantidade de workers deve ser entre 1 e 2"); 
+		exit(0); 
 	}
 
 	for(int i = 0; i < inputs->nWorkers; i++){
